@@ -8,26 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
-    var messageArray = ["Hello you", "How you've been doing?", "I've been building SwiftUI Application from scrath and it's so much fun!"]
+    @StateObject var messagesManager = MessagesManager()
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             VStack {
                 TitleRow()
-                
-                ScrollView {
-                    ForEach(messageArray, id: \.self) { text in
-                        MessageBubble(message: Message(id: "12345", text: text, received: true, timestamp: Date())
-                        )
+                if messagesManager.messages.isEmpty {
+                    Rectangle()
+                        .foregroundColor(.white)
+                        .cornerRadius(30, corners: [.topLeft, .topRight])
+                }
+                else {
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            ForEach(messagesManager.messages, id: \.id) { message in
+                                MessageBubble(message: message)
+                            }
+                        }
+                        .padding(.top, 10)
+                        .background(.white)
+                        .cornerRadius(30, corners: [.topLeft, .topRight])
+                        .onChange(of: messagesManager.lastMessageId) { id in
+                            withAnimation {
+                                proxy.scrollTo(id, anchor: .bottom )
+                            }
+                        }
                     }
                 }
-                .padding(.top, 10)
-                .background(.white)
-                .cornerRadius(30, corners: [.topLeft, .topRight])
             }
             .background(Color("Peach"))
             
             MessageField()
+                .environmentObject(messagesManager)
+                .background(.white)
         }
+        .foregroundColor(.black)
     }
 }
 

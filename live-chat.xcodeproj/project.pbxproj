@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F02B43E294D14A500E9FDC3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F02B43D294D14A500E9FDC3 /* GoogleService-Info.plist */; };
 		8FEDBA12294BA28200D451E8 /* live_chatApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA11294BA28200D451E8 /* live_chatApp.swift */; };
 		8FEDBA14294BA28200D451E8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA13294BA28200D451E8 /* ContentView.swift */; };
 		8FEDBA16294BA28300D451E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FEDBA15294BA28300D451E8 /* Assets.xcassets */; };
@@ -16,9 +17,13 @@
 		8FEDBA28294BC6BD00D451E8 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA27294BC6BD00D451E8 /* MessageBubble.swift */; };
 		8FEDBA2A294BCA6B00D451E8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA29294BCA6B00D451E8 /* Extensions.swift */; };
 		8FEDBA2C294BCADE00D451E8 /* MessageField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA2B294BCADE00D451E8 /* MessageField.swift */; };
+		8FEDBA2F294D0E2700D451E8 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8FEDBA2E294D0E2700D451E8 /* FirebaseFirestore */; };
+		8FEDBA31294D0E2700D451E8 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8FEDBA30294D0E2700D451E8 /* FirebaseFirestoreSwift */; };
+		8FEDBA34294D0FE000D451E8 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FEDBA33294D0FE000D451E8 /* Messages.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F02B43D294D14A500E9FDC3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8FEDBA0E294BA28200D451E8 /* live-chat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "live-chat.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FEDBA11294BA28200D451E8 /* live_chatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = live_chatApp.swift; sourceTree = "<group>"; };
 		8FEDBA13294BA28200D451E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -29,6 +34,7 @@
 		8FEDBA27294BC6BD00D451E8 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
 		8FEDBA29294BCA6B00D451E8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		8FEDBA2B294BCADE00D451E8 /* MessageField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageField.swift; sourceTree = "<group>"; };
+		8FEDBA33294D0FE000D451E8 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FEDBA2F294D0E2700D451E8 /* FirebaseFirestore in Frameworks */,
+				8FEDBA31294D0E2700D451E8 /* FirebaseFirestoreSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +76,8 @@
 				8FEDBA1F294BAC6900D451E8 /* Components */,
 				8FEDBA15294BA28300D451E8 /* Assets.xcassets */,
 				8FEDBA17294BA28300D451E8 /* Preview Content */,
+				8FEDBA33294D0FE000D451E8 /* Messages.swift */,
+				8F02B43D294D14A500E9FDC3 /* GoogleService-Info.plist */,
 			);
 			path = "live-chat";
 			sourceTree = "<group>";
@@ -114,6 +124,10 @@
 			dependencies = (
 			);
 			name = "live-chat";
+			packageProductDependencies = (
+				8FEDBA2E294D0E2700D451E8 /* FirebaseFirestore */,
+				8FEDBA30294D0E2700D451E8 /* FirebaseFirestoreSwift */,
+			);
 			productName = "live-chat";
 			productReference = 8FEDBA0E294BA28200D451E8 /* live-chat.app */;
 			productType = "com.apple.product-type.application";
@@ -142,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 8FEDBA05294BA28200D451E8;
+			packageReferences = (
+				8FEDBA2D294D0E2700D451E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8FEDBA0F294BA28200D451E8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -158,6 +175,7 @@
 			files = (
 				8FEDBA19294BA28300D451E8 /* Preview Assets.xcassets in Resources */,
 				8FEDBA16294BA28300D451E8 /* Assets.xcassets in Resources */,
+				8F02B43E294D14A500E9FDC3 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8FEDBA14294BA28200D451E8 /* ContentView.swift in Sources */,
+				8FEDBA34294D0FE000D451E8 /* Messages.swift in Sources */,
 				8FEDBA2A294BCA6B00D451E8 /* Extensions.swift in Sources */,
 				8FEDBA24294BBED900D451E8 /* Message.swift in Sources */,
 				8FEDBA2C294BCADE00D451E8 /* MessageField.swift in Sources */,
@@ -311,6 +330,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,6 +360,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -375,6 +396,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8FEDBA2D294D0E2700D451E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 9.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8FEDBA2E294D0E2700D451E8 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FEDBA2D294D0E2700D451E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8FEDBA30294D0E2700D451E8 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8FEDBA2D294D0E2700D451E8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8FEDBA06294BA28200D451E8 /* Project object */;
 }
